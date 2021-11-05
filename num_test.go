@@ -12,21 +12,31 @@ func TestNum(t *testing.T) {
 func TestMinMax(t *testing.T) {
 	n := []int{10, -15, 20, 25, 30}
 	min, max := MinMax(n)
-	if min != -15 {
-		t.Errorf("Min function not working")
+	for i, result := range n {
+		if min != result {
+			t.Errorf("Min function vith index %v not working", i)
+		}
 	}
-	if max != 30 {
-		t.Errorf("Max function not working")
+	for i, result := range n {
+		if max != result {
+			t.Errorf("Max function with index %v not working", i)
+		}
 	}
+
 }
 
 func TestAvrg(t *testing.T)  {
 	n := []int{10, -15, 20, 25, 30}
+	k := []int{14, 70, 22, 0, -2}
 	avrg, sum := Averg(n)
-	if avrg != 14 {
-		t.Errorf("Avrg function not working")
+	for i, result := range k {
+		if avrg != float64(result) {
+			t.Errorf("Not correct avrg result in position %v", i)
+		}
 	}
-	if sum != 70 {
-		t.Errorf("Sum function not working")
+	for i, result := range k {
+		if sum != float64(result) {
+			t.Errorf("Sum not correct in position %v", i)
+		}
 	}
 }
