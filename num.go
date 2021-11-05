@@ -6,7 +6,7 @@ type number []int
 
 func newNum() number {
     mySlice := number{}
-    N := []int {10, 15, 20, 25, 30}
+    N := []int {10, -15, 20, 25, 30}
     for _, integer := range N {
 
             mySlice = append(mySlice, integer)
