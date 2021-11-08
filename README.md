@@ -1,3 +1,3 @@
+PS C:\Users\ybudn\Go\Test> go test
 PASS
-coverage: 65.5% of statements
-ok  	_/c_/Users/ybudn/Go/Test	0.053s
+ok      _/C_/Users/ybudn/Go/Test        0.060s

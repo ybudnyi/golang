@@ -1,12 +1,11 @@
 package main
 
-//import "fmt"
 
-type number []int
+type number []int64
 
 func newNum() number {
     mySlice := number{}
-    N := []int {10, -15, 20, 25, 30}
+    N := []int64 {10, -15, 20, 25, 30}
     for _, integer := range N {
 
             mySlice = append(mySlice, integer)
@@ -21,9 +20,9 @@ func (n number) print() {
     }
 }
 
-func MinMax(n number) (int, int) {
-var max int = n[0]
-var min int = n[0]
+func MinMax(n number) (int64, int64) {
+var max int64 = n[0]
+var min int64 = n[0]
 for _, value := range n {
     if max < value {
         max = value
@@ -36,7 +35,7 @@ for _, value := range n {
 }
 
 func Averg(n number) (float64, float64) {
-sum := 0   
+var sum int64 = 0   
 l := len(n)
 for k := range n {
     sum += n[k]

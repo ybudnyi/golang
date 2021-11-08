@@ -10,37 +10,37 @@ func TestNum(t *testing.T) {
 }
 
 func TestMin(t *testing.T) {
-	testData := map[int][]int {
-		10: []int{10, 15, 20, 25, 30},
-		0: []int{0, 0, 0, 0, 0},
-		-30: []int{-10, -15, -20, -25, -30},
+	testData := map[int64][]int64 {
+		10: []int64{10, 15, 20, 25, 30},
+		0: []int64{0, 0, 0, 0, 0},
+		-30: []int64{-10, -15, -20, -25, -30},
 	}
 	for i, result := range testData {
 		min, _ := MinMax(result)
-		if min != int(i) {
+		if min != int64(i) {
 			t.Errorf("Min function vith value %v not working", i)
 		}
 	}
 }
 func TestMax(t *testing.T) {
-	testData := map[int][]int {
-		30: []int{10, 15, 20, 25, 30},
-		0: []int{0, 0, 0, 0, 0},
-		-10: []int{-10, -15, -20, -25, -30},
+	testData := map[int64][]int64 {
+		30: []int64{10, 15, 20, 25, 30},
+		0: []int64{0, 0, 0, 0, 0},
+		-10: []int64{-10, -15, -20, -25, -30},
 	}
 	for i, result := range testData {
 		_, max := MinMax(result)
-		if max != int(i) {
+		if max != int64(i) {
 			t.Errorf("Max function vith value %v not working", i)
 		}
 	}
 }
 
 func TestAvrg(t *testing.T)  {
-	testData := map[int][]int {
-		20: []int{10, 15, 20, 25, 30},
-		0: []int{0, 0, 0, 0, 0},
-		-20: []int{-10, -15, -20, -25, -30},
+	testData := map[int64][]int64 {
+		20: []int64{10, 15, 20, 25, 30},
+		0: []int64{0, 0, 0, 0, 0},
+		-20: []int64{-10, -15, -20, -25, -30},
 	}
 	for i, result := range testData {
 		avrg, _ := Averg(result)
@@ -50,10 +50,10 @@ func TestAvrg(t *testing.T)  {
 	}
 }
 func TestSum(t *testing.T)  {
-	testData := map[int][]int {
-		100: []int{10, 15, 20, 25, 30},
-		0: []int{0, 0, 0, 0, 0},
-		-100: []int{-10, -15, -20, -25, -30},
+	testData := map[int64][]int64 {
+		100: []int64{10, 15, 20, 25, 30},
+		0: []int64{0, 0, 0, 0, 0},
+		-100: []int64{-10, -15, -20, -25, -30},
 	}
 	for i, result := range testData {
 		_, sum := Averg(result)

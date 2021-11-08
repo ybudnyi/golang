@@ -4,12 +4,11 @@ package main
 
 
 func main() {
-        numFunc := newNum()
         println("Numbers in slice are:")
-        numFunc.print()
-        m, x := MinMax(numFunc)
+        newNum().print()
+        m, x := MinMax(newNum())
         println("Min number is:", m)
         println("Max number is:", x)
-        av, s := Averg(numFunc)
+        av, s := Averg(newNum())
         println("Average from numbers in slice is:", av, "\n","Sum of numbers is:", s)
 }
