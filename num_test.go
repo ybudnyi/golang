@@ -3,40 +3,65 @@ package main
 import "testing"
 
 func TestNum(t *testing.T) {
-	n := []int{10, -15, 20, 25, 30}
+	n := newNum()
 	if len(n) != 5 {
-		t.Errorf("Not enought numbers")
+		t.Errorf("Not correct number of items")
 	}
 }
 
-func TestMinMax(t *testing.T) {
-	n := []int{10, -15, 20, 25, 30}
-	min, max := MinMax(n)
-	for i, result := range n {
-		if min != result {
-			t.Errorf("Min function vith index %v not working", i)
+func TestMin(t *testing.T) {
+	testData := map[int][]int {
+		10: []int{10, 15, 20, 25, 30},
+		0: []int{0, 0, 0, 0, 0},
+		-30: []int{-10, -15, -20, -25, -30},
+	}
+	for i, result := range testData {
+		min, _ := MinMax(result)
+		if min != int(i) {
+			t.Errorf("Min function vith value %v not working", i)
 		}
 	}
-	for i, result := range n {
-		if max != result {
-			t.Errorf("Max function with index %v not working", i)
+}
+func TestMax(t *testing.T) {
+	testData := map[int][]int {
+		30: []int{10, 15, 20, 25, 30},
+		0: []int{0, 0, 0, 0, 0},
+		-10: []int{-10, -15, -20, -25, -30},
+	}
+	for i, result := range testData {
+		_, max := MinMax(result)
+		if max != int(i) {
+			t.Errorf("Max function vith value %v not working", i)
 		}
 	}
-
 }
 
 func TestAvrg(t *testing.T)  {
-	n := []int{10, -15, 20, 25, 30}
-	k := []int{14, 70, 22, 0, -2}
-	avrg, sum := Averg(n)
-	for i, result := range k {
-		if avrg != float64(result) {
-			t.Errorf("Not correct avrg result in position %v", i)
-		}
+	testData := map[int][]int {
+		20: []int{10, 15, 20, 25, 30},
+		0: []int{0, 0, 0, 0, 0},
+		-20: []int{-10, -15, -20, -25, -30},
 	}
-	for i, result := range k {
-		if sum != float64(result) {
-			t.Errorf("Sum not correct in position %v", i)
+	for i, result := range testData {
+		avrg, _ := Averg(result)
+		if avrg != float64(i) {
+			t.Errorf("Not correct avrg result in %v", i)
 		}
 	}
 }
+func TestSum(t *testing.T)  {
+	testData := map[int][]int {
+		100: []int{10, 15, 20, 25, 30},
+		0: []int{0, 0, 0, 0, 0},
+		-100: []int{-10, -15, -20, -25, -30},
+	}
+	for i, result := range testData {
+		_, sum := Averg(result)
+		if sum != float64(i) {
+			t.Errorf("Not correct avrg result in %v", i)
+		}
+	}
+}
+
+
+
