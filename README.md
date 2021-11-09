@@ -1,4 +1,4 @@
-Simple function what create array of five numbers and find minimum, maximum, average and sum of numbers in array. Unit Tests for functions above are included. 
+Simple function what create array of five numbers and find minimum, maximum, average and sum of numbers in array. Unit Tests for functions above are included.   
 PS C:\Users\ybudn\Go\Test> go run .\main.go .\num.go  
 Numbers in slice are:  
 10  
