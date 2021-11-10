@@ -1,19 +1,6 @@
 package main
 
 
-type number []int64
-
-func newNum() number {
-    mySlice := number{}
-    N := []int64 {10, -15, 20, 25, 30}
-    for _, integer := range N {
-
-            mySlice = append(mySlice, integer)
-    }
-    return mySlice
-}
-
-
 func (n number) print() {
     for _, i := range n {
             println(i)
